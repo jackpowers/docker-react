@@ -5,6 +5,8 @@ services:
 before_install:
     - docker build -t jdpowers/docker-react -f Dockerfile.dev .  
     
+before_script: echo $TEST_ENV_VAR    
+
 script:
     - docker run -e CI=true jdpowers/docker-react npm run test -- --coverage
 
@@ -19,4 +21,7 @@ deploy:
     bucket_path: "docker-react"
     on: 
         branch: master
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
 
+        
