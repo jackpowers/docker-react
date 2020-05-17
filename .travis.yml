@@ -14,10 +14,10 @@ language: generic
 deploy: 
     provider: elasticbeanstalk
     region: "us-east-2"
-    app: "docker-react"
-    env: "DockerReact-env-1"
+    app: "react-travis-docker"
+    env: "ReactTravisDocker-env"
     bucket_name: "elasticbeanstalk-us-east-2-172423524207"
-    bucket_path: "docker-react"
+    bucket_path: "react-travis-docker"
     on: 
         branch: master
     access_key_id: $AWS_ACCESS_KEY
